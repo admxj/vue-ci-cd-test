@@ -1,6 +1,6 @@
 FROM node:12.9.1-alpine as builder
-COPY . /admin-template
-WORKDIR /admin-template
+COPY . /code
+WORKDIR /code
 ARG envType
 RUN NODE_ENV=$envType yarn --registry=https://registry.npm.taobao.org \
     && NODE_ENV=$envType yarn build
