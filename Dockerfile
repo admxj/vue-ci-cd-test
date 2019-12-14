@@ -1,4 +1,4 @@
-alpineFROM node:12.9.1-alpine as builder
+FROM node:12.9.1-alpine as builder
 COPY . /admin-template
 WORKDIR /admin-template
 ARG envType
