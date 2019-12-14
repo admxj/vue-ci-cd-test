@@ -7,5 +7,5 @@ RUN NODE_ENV=$envType yarn --registry=https://registry.npm.taobao.org \
 FROM daocloud.io/nginx:1.11-alpine
 COPY --from=builder /code/dist /www
 COPY --from=builder /code/nginx/nginx.conf /etc/nginx/nginx.conf
-COPY --from=builder /code/nginx/conf.d/ /etc/nginx/conf.d/
+COPY --from=builder /code/nginx/conf.d/www.conf /etc/nginx/conf.d/default.conf
 CMD ["nginx", "-g", "daemon off;"]
